@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title>Foggy weather</title><desc>Animated fog weather icon</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#42B8FF"/><stop offset="1" stop-color="#174EA6"/></linearGradient>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#283593"/><stop offset="1" stop-color="#0D1B2A"/></linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F8FCFF"/><stop offset="1" stop-color="#9CC9E8"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .cloud{fill:url(#cloud);stroke:#D8F0FF;stroke-width:2;stroke-linejoin:round}
+      .ray{stroke:#FFD45A;stroke-width:4;stroke-linecap:round}
+      .rain{stroke:#42B8FF;stroke-width:4;stroke-linecap:round}
+      .wind{fill:none;stroke:#BDEBFF;stroke-width:3;stroke-linecap:round}
+      .snow{fill:#EAF8FF;stroke:#9DD9FF;stroke-width:1.5}
+    </style>
+  </defs>
+  <path d="M17 56h94" class="wind"/><path d="M27 72h78" class="wind" opacity=".72"/><path d="M17 88h94" class="wind" opacity=".45"/><path d="M38 40h50" class="wind" opacity=".35"/><animateTransform attributeName="transform" type="translate" values="-4 0;4 0;-4 0" dur="6s" repeatCount="indefinite"/>
+</svg>

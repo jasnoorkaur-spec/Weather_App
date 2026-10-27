@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title>Sunny weather</title><desc>Animated sunny weather icon</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#42B8FF"/><stop offset="1" stop-color="#174EA6"/></linearGradient>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#283593"/><stop offset="1" stop-color="#0D1B2A"/></linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F8FCFF"/><stop offset="1" stop-color="#9CC9E8"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .cloud{fill:url(#cloud);stroke:#D8F0FF;stroke-width:2;stroke-linejoin:round}
+      .ray{stroke:#FFD45A;stroke-width:4;stroke-linecap:round}
+      .rain{stroke:#42B8FF;stroke-width:4;stroke-linecap:round}
+      .wind{fill:none;stroke:#BDEBFF;stroke-width:3;stroke-linecap:round}
+      .snow{fill:#EAF8FF;stroke:#9DD9FF;stroke-width:1.5}
+    </style>
+  </defs>
+  <circle cx="64" cy="55" r="24" fill="#FFD45A" filter="url(#glow)"/><g class="ray"><line x1="64" y1="18" x2="64" y2="8" transform="rotate(0 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(45 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(90 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(135 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(180 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(225 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(270 64 55)"/><line x1="64" y1="18" x2="64" y2="8" transform="rotate(315 64 55)"/></g><circle cx="64" cy="55" r="17" fill="#FFE58A" opacity=".55"/>
+</svg>

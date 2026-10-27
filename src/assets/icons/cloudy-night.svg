@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title>Cloudy night weather</title><desc>Animated cloudy night icon</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#42B8FF"/><stop offset="1" stop-color="#174EA6"/></linearGradient>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#283593"/><stop offset="1" stop-color="#0D1B2A"/></linearGradient>
+    <linearGradient id="cloud" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#F8FCFF"/><stop offset="1" stop-color="#9CC9E8"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <style>
+      .cloud{fill:url(#cloud);stroke:#D8F0FF;stroke-width:2;stroke-linejoin:round}
+      .ray{stroke:#FFD45A;stroke-width:4;stroke-linecap:round}
+      .rain{stroke:#42B8FF;stroke-width:4;stroke-linecap:round}
+      .wind{fill:none;stroke:#BDEBFF;stroke-width:3;stroke-linecap:round}
+      .snow{fill:#EAF8FF;stroke:#9DD9FF;stroke-width:1.5}
+    </style>
+  </defs>
+  <circle cx="82" cy="36" r="18" fill="#FFF1B5" filter="url(#glow)"/><circle cx="90" cy="30" r="18" fill="#172B62"/><g fill="#EAF8FF"><circle cx="27" cy="28" r="1.5"/><circle cx="45" cy="20" r="1.5"/></g><path class="cloud" d="M18 91h87c10 0 16-7 16-15s-7-15-16-15c-3-12-14-20-27-20-13 0-24 8-28 19-12-1-22 6-22 16 0 9 6 15 17 15z"/><animateTransform attributeName="transform" type="translate" values="0 0;2 -1;0 0" dur="5s" repeatCount="indefinite"/>
+</svg>
