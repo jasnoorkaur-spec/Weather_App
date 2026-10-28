@@ -4,38 +4,46 @@ import { setError, setLoading, setResponse} from "../redux_features/weatherSlice
 import { fetchWeatherbyCity } from '../API/WeatherAPI'
 import { CalendarRange, ChevronRight } from 'lucide-react'
 import {Link} from 'react-router-dom'
+import clearday from '/src/assets/icons/clear-day.svg';
+import clearnight from '/src/assets/icons/clear-night.svg';
+import cloudnight from '/src/assets/icons/cloudy-night.svg';
+import cloudday from '/src/assets/icons/cloudy-day.svg';
+import rainy from '/src/assets/icons/rainy.svg';
+import fog from '/src/assets/icons/fog.svg';
+import snow from '/src/assets/icons/snow.svg';
+import storm from '/src/assets/icons/thunderstorm.svg';
 
 const HourlyForecast = () => 
 {
     const {response,loading,error,Isday} = useSelector((store)=>store.weather);
     
-    const getWeatherIcon= (Code,is_day) => 
+    const getWeatherIcon= (Code,Isday) => 
     {
         if (Code === 0) {
-            return is_day===1 ? `/src/assets/icons/clear-day.svg` : `/src/assets/icons/clear-night.svg`;
+            return Isday===1 ? clearday : clearnight;
         }
 
         if ([1, 2, 3].includes(Code)) {
-            return is_day===1 ? `/src/assets/icons/cloudy-day.svg` : `/src/assets/icons/cloudy-night.svg`;
+            return Isday===1 ? cloudday : cloudnight;
         }
 
         if ([45, 48].includes(Code)) {
-            return `/src/assets/icons/fog.svg`;
+            return fog;
         }
 
         if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(Code)) {
-            return `/src/assets/icons/rainy.svg`;
+            return rainy;
         }
 
         if ([71, 73, 75, 77, 85, 86].includes(Code)) {
-            return `/src/assets/icons/snow.svg`;
+            return snow;
         }
 
         if ([95, 96, 99].includes(Code)) {
-            return `/src/assets/icons/thunderstorm.svg`;
+            return storm;
         }
 
-        return is_day===1 ? `/src/assets/icons/clear-day.svg` : `/src/assets/icons/clear-night.svg`;
+        return Isday===1 ? clearday : clearnight;
     };
 
     if(loading) return <div className="h-68 max-w-210 w-full mx-auto rounded-2xl animate-pulse bg-white/30"></div>

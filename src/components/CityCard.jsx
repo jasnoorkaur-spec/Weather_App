@@ -3,6 +3,14 @@ import { fetchCoordinates, fetchWeatherbyCity } from '../API/WeatherAPI'
 import { useEffect, useState } from 'react';
 import { setError, setFore_time, setIsday, setLoading,  setRecent,  setResponse,  setResults, setWeatherCode, setmax_temp, setmin_temp} from '../redux_features/weatherSlice';
 import { Droplet, Eye, Gauge, Wind } from 'lucide-react';
+import clearday from '/src/assets/icons/clear-day.svg';
+import clearnight from '/src/assets/icons/clear-night.svg';
+import cloudnight from '/src/assets/icons/cloudy-night.svg';
+import cloudday from '/src/assets/icons/cloudy-day.svg';
+import rainy from '/src/assets/icons/rainy.svg';
+import fog from '/src/assets/icons/fog.svg';
+import snow from '/src/assets/icons/snow.svg';
+import storm from '/src/assets/icons/thunderstorm.svg';
 
 const CityCard = () => 
 {
@@ -110,30 +118,30 @@ const CityCard = () =>
     const getWeatherIcon= (Code,Isday) => 
     {
         if (Code === 0) {
-            return Isday===1 ? `/src/assets/icons/clear-day.svg` : `/src/assets/icons/clear-night.svg`;
+            return Isday===1 ? clearday : clearnight;
         }
 
         if ([1, 2, 3].includes(Code)) {
-            return Isday===1 ? `/src/assets/icons/cloudy-day.svg` : `/src/assets/icons/cloudy-night.svg`;
+            return Isday===1 ? cloudday : cloudnight;
         }
 
         if ([45, 48].includes(Code)) {
-            return `/src/assets/icons/fog.svg`;
+            return fog;
         }
 
         if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(Code)) {
-            return `/src/assets/icons/rainy.svg`;
+            return rainy;
         }
 
         if ([71, 73, 75, 77, 85, 86].includes(Code)) {
-            return `/src/assets/icons/snow.svg`;
+            return snow;
         }
 
         if ([95, 96, 99].includes(Code)) {
-            return `/src/assets/icons/thunderstorm.svg`;
+            return storm;
         }
 
-        return Isday===1 ? `/src/assets/icons/clear-day.svg` : `/src/assets/icons/clear-night.svg`;
+        return Isday===1 ? clearday : clearnight;
     };
     
 
