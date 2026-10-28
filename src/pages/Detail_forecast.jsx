@@ -4,6 +4,14 @@ import { Link, Navigate, useLocation } from "react-router-dom"
 import { fetchCoordinates } from "../API/WeatherAPI";
 import { setError, setLoading } from "../redux_features/weatherSlice";
 import { CalendarRange, CloudRain, Droplet, Sun, Wind } from "lucide-react";
+import clearday from '/src/assets/icons/clear-day.svg';
+import clearnight from '/src/assets/icons/clear-night.svg';
+import cloudnight from '/src/assets/icons/cloudy-night.svg';
+import cloudday from '/src/assets/icons/cloudy-day.svg';
+import rainy from '/src/assets/icons/rainy.svg';
+import fog from '/src/assets/icons/fog.svg';
+import snow from '/src/assets/icons/snow.svg';
+import storm from '/src/assets/icons/thunderstorm.svg';
 
 const Detail_forecast = () => {
 
@@ -11,33 +19,33 @@ const Detail_forecast = () => {
   const [Coord, setCoord] = useState(null);
   const dispatch = useDispatch();
 
-  const getWeatherIcon= (Code,is_day) => 
+  const getWeatherIcon= (Code,Isday) => 
   {
-    if (Code === 0) {
-        return is_day===1 ? `/src/assets/icons/clear-day.svg` : `/src/assets/icons/clear-night.svg`;
-    }
+      if (Code === 0) {
+          return Isday===1 ? clearday : clearnight;
+      }
 
-    if ([1, 2, 3].includes(Code)) {
-        return is_day===1 ? `/src/assets/icons/cloudy-day.svg` : `/src/assets/icons/cloudy-night.svg`;
-    }
+      if ([1, 2, 3].includes(Code)) {
+          return Isday===1 ? cloudday : cloudnight;
+      }
 
-    if ([45, 48].includes(Code)) {
-        return `/src/assets/icons/fog.svg`;
-    }
+      if ([45, 48].includes(Code)) {
+          return fog;
+      }
 
-    if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(Code)) {
-        return `/src/assets/icons/rainy.svg`;
-    }
+      if ([51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(Code)) {
+          return rainy;
+      }
 
-    if ([71, 73, 75, 77, 85, 86].includes(Code)) {
-        return `/src/assets/icons/snow.svg`;
-    }
+      if ([71, 73, 75, 77, 85, 86].includes(Code)) {
+          return snow;
+      }
 
-    if ([95, 96, 99].includes(Code)) {
-        return `/src/assets/icons/thunderstorm.svg`;
-    }
+      if ([95, 96, 99].includes(Code)) {
+          return storm;
+      }
 
-    return is_day===1 ? `/src/assets/icons/clear-day.svg` : `/src/assets/icons/clear-night.svg`;
+      return Isday===1 ? clearday : clearnight;
   };
 
   const getWeatherInfo = (weatherCode) =>
