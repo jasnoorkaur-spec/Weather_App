@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Cloud, CloudSun, Leaf, Sun, Sunrise, Sunset } from "lucide-react";
+import rainy from '/src/assets/icons/rainy.svg'
 
 const Insights = () => 
 {
@@ -145,7 +146,7 @@ const Insights = () =>
           <p className="px-4 py-3 font-semibold text-md sm:text-xl">Chance of rain</p>
           <div className="flex sm:gap-10 gap-5">
             <img className='sm:h-30 sm:w-30 h-15 w-15 mb-5 contrast-150 saturate-250 brightness-80'
-              src='/src/assets/icons/rainy.svg'
+              src={rainy}
               alt=""/>
 
             <div className="mt-3 sm:ml-2">
